@@ -1,7 +1,7 @@
 
 
 int MaxPwmNT = 255;
-int robotSpeedNT = 150;
+int robotSpeedNT = 180;
 float lastErrorNT = 0;
 
 double kpNT = EEPROM.read(0);

@@ -36,7 +36,7 @@ void setup() {
 
   setupEEPROM();
 
-  SetSetpointNT(9);
+  SetSetpointNT(getSetPointNT());
   SetSetpointMT(0);
   digitalWrite(kuantiaw, HIGH);
 
@@ -84,6 +84,7 @@ void loop() {
   data();
 
   //check
+//  majuEdit(100, getPwmAdd());
   //  kondisiMotor(0, jarak());
   //jarak();
 

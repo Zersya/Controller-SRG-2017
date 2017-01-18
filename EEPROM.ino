@@ -1,6 +1,6 @@
 #include <EEPROM.h>
 
-int NT[3] = {35, 4, 10};
+int NT[3] = {EEPROM.read(0), EEPROM.read(1), EEPROM.read(2)};
 int MT[3] = {25, 1, 0};
 int ambilBatas = 0;
 int naikPwm = 0;

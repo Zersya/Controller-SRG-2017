@@ -43,17 +43,19 @@ void SerialEvent() {
       inB = "";
       if (b == 9999) {
         counterc++;
-        if (counterc == 1) {
+        if (counterc == 5) {
           waktuTimer();
           delay(2000);
           Naik(255);
           delay(1000);
+          Serial1.println("Turun!!!");
+          Serial1.println(counterc);
         }
       } else {
         b = jarak();
         counterc = 0;
       }
-      if (counterb == 20) {
+      if (counterb == 15) {
         Serial1.print("A : ");
         Serial1.println(a);
         Serial1.print("B : ");
