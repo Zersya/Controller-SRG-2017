@@ -8,19 +8,18 @@ int naikPwm = 0;
 void setupEEPROM() {
   //KP += 0.5
   //  EEPROM.write(0, 35);
-  //    EEPROM.write(1, 0.5);
+  //  EEPROM.write(1, 0.5);
   //  EEPROM.write(3, 10);
   //
   //  EEPROM.write(4, 25);
   //  EEPROM.write(5, 1);
-  //    EEPROM.write(6, 0);
-  //  EEPROM.write(7, 0);
+  //  EEPROM.write(6, 0);
+
+  //  EEPROM.write(7, 100);
   //  EEPROM.write(8, 0);
   //  EEPROM.write(9, 0);
   //  EEPROM.write(10, 0);
 
-//  EEPROM.write(11, 500); //AmbilWaktu
-  
 
   //clear
   //  for (int i = 0; i < EEPROM.length(); i++) {
@@ -125,31 +124,15 @@ void addPwm(char L) {
     setPwmAdd(naikPwm += 1);
     EEPROM.write(7, naikPwm);
     Serial1.print("PWM Maju naik : ");
-    Serial1.println(getPwmAdd());
+    Serial1.println(naikPwm);
   }
   if (L == '-') {
     setPwmAdd(naikPwm -= 1);
     EEPROM.write(7, naikPwm);
     Serial1.print("PWM Maju turun : ");
-    Serial1.println(getPwmAdd());
+    Serial1.println(naikPwm);
   }
 }
-
-//void ambilBatasStat(char L){
-//  ambilBatas = EEPROM.read(11); 
-//  if(L == '.'){
-//    setCounterBatas(ambilBatas += 15);
-//    EEPROM.write(11, ambilBatas);
-//    Serial1.print("CounterBatas Naik");
-//    Serial1.println(getCounterBatas());
-//  }
-//  if(L == ','){
-//    setCounterBatas(ambilBatas += 15);
-//    EEPROM.write(11, ambilBatas);
-//    Serial1.print("CounterBatas Turun");
-//    Serial1.println(getCounterBatas());
-//  }
-//}
 
 void cekKondisi(char L) {
   if (L == 'G') {
@@ -162,6 +145,9 @@ void cekKondisi(char L) {
     for (int i = 0; i < 3; i++) {
       Serial1.println(MT[i]);
     }
+
+    Serial1.println("//PWMAddKanan");
+    Serial1.println(naikPwm);
   }
 }
 

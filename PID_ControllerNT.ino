@@ -4,9 +4,9 @@ int MaxPwmNT = 255;
 int robotSpeedNT = 150;
 float lastErrorNT = 0;
 
-double kpNT = 20;
-double kdNT = 1;
-double SetpointNT = 0;
+double kpNT = EEPROM.read(0);
+double kdNT = EEPROM.read(1);
+double SetpointNT = EEPROM.read(2);
 
 double ComputeNT(double input)
 {

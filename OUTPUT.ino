@@ -1,15 +1,15 @@
-int pwmAdd = 100;
+int pwmAdd = EEPROM.read(7);
 bool ambilJatuh = false;
 
 void kondisiMotor(int Aoutput, int Boutput) {
   //BelokKiriKanan
   if (Aoutput < 0) {
     serongKiri(ComputeMT(Aoutput));
-    majuEdit(100, 120);
+    majuEdit(100, pwmAdd);
     Serial.println("keKanan");
   } else if (Aoutput > 0) {
     serongKanan(ComputeMT(Aoutput));
-    majuEdit(100, 120);
+    majuEdit(100, pwmAdd);
     Serial.println("keKiri");
   }
 

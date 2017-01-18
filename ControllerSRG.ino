@@ -40,10 +40,20 @@ void setup() {
   SetSetpointMT(0);
   digitalWrite(kuantiaw, HIGH);
 
+Serial1.println("//NT");
+Serial1.println(getKpNT());
+Serial1.println(getKdNT());
+Serial1.println(getSetPointNT());
+
+Serial1.println("//MT");
+Serial1.println(getKpMT());
+Serial1.println(getKdMT());
+Serial1.println(getSetPointMT());
+  
   check(255);
   delay(8000);
   check(120);
-  delay(1000);
+  delay(2000);
   check(0);
 }
 char l;
@@ -53,8 +63,8 @@ void loop() {
     l = Serial1.read();
     tambahNT(l);
     tambahMT(l);
-    //    ambilBatasStat(l);
-    //    addPwm(l);
+
+    addPwm(l);
     cekKondisi(l);
 
     if (l == 'A') {
@@ -70,11 +80,12 @@ void loop() {
       Naik(255);
     }
   }
-  //  SerialEvent();
-  //  data();
+  SerialEvent();
+  data();
+
+  //check
   //  kondisiMotor(0, jarak());
   //jarak();
-  majuEdit(100, 120);
 
 }
 

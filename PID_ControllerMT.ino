@@ -4,9 +4,9 @@ int MaxPwmMT = 80;
 int robotSpeedMT = 50;
 float lastErrorMT = 0;
 
-double kpMT = 35;         
-double kdMT = 1;          
-double SetpointMT = 0;     
+double kpMT = EEPROM.read(4);         
+double kdMT = EEPROM.read(5);          
+double SetpointMT = EEPROM.read(6);     
 
 double ComputeMT(double input)
 {
@@ -21,8 +21,8 @@ double ComputeMT(double input)
   if(output < 0){ output *= -1; }
 
   lastErrorMT = input;
-  Serial.print("PWM A : ");
-  Serial.println(output);
+//  Serial1.print("PWM A : ");
+//  Serial1.println(output);
   return output;
 }
 
