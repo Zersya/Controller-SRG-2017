@@ -5,11 +5,11 @@ void kondisiMotor(int Aoutput, int Boutput) {
   //BelokKiriKanan
   if (Aoutput < 0) {
     serongKiri(ComputeMT(Aoutput));
-    majuEdit(100, pwmAdd);
+    majuEdit(120, pwmAdd+20);
     Serial.println("keKanan");
   } else if (Aoutput > 0) {
     serongKanan(ComputeMT(Aoutput));
-    majuEdit(100, pwmAdd);
+    majuEdit(120, pwmAdd+20);
     Serial.println("keKiri");
   }
 

@@ -52,7 +52,7 @@ Serial1.println(getSetPointMT());
   
   check(255);
   delay(8000);
-  check(120);
+  check(180);
   delay(2000);
   check(0);
 }
